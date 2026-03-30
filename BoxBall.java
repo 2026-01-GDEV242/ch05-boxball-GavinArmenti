@@ -54,6 +54,10 @@ public class BoxBall
         diameter = ballDiameter;
         
         myBox = box;
+        
+        java.util.Random random = new java.util.Random();
+        xSpeed = random.nextInt(11) - 5;
+        ySpeed = random.nextInt(11) - 5;
 
         canvas = drawingCanvas;
     }
@@ -112,7 +116,7 @@ public class BoxBall
         if (yPosition + diameter > myBox.getBottomWall())
         {
             ySpeed = -ySpeed;
-            yPosition = myBox.getTopWall() - diameter;
+            yPosition = myBox.getBottomWall() - diameter;
         }
         
         draw();
