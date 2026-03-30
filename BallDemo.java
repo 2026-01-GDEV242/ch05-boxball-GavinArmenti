@@ -1,4 +1,5 @@
 import java.awt.Color;
+import java.util.Random;
 
 /**
  * Class BallDemo - a short demonstration showing animation with the 
@@ -33,9 +34,30 @@ public class BallDemo
      * 
      * @param numOfBalls number of balls to simulate bouncing, clamped between 5-50. 
      */
-    public void boxBounce()
+    public void boxBounce(int numOfBalls)
     {
         // you must implement this
+        Random random = new Random();
+        
+        if (numOfBalls >= 5 && numOfBalls <=50)
+        {
+            java.util.ArrayList<BoxBall> boxballs = new java.util.ArrayList<BoxBall>();
+            for (int i = 0; i < numOfBalls; i++)
+            {
+                int xpos = random.nextInt(400) + 100;
+                int ypos = random.nextInt(300) + 100;
+                
+                boxballs.add(new BoxBall(xpos, ypos, 16, Color.BLUE, this.box, myCanvas));
+            }
+            
+            while (true)
+            {
+                for (int i = 0; i < boxballs.size();i++)
+                {
+                    boxballs.get(i).move();
+                }
+            }
+        }
     }
     
     /**

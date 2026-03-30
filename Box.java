@@ -76,6 +76,7 @@ public class Box
      */
     public void draw()
     {
+        myCanvas.setForegroundColor(java.awt.Color.BLACK);
         myCanvas.drawLine(upperLeftX, upperLeftY, lowerRightX, upperLeftY);
         myCanvas.drawLine(lowerRightX, upperLeftY, lowerRightX, lowerRightY);
         myCanvas.drawLine(lowerRightX, lowerRightY, upperLeftX, lowerRightY);

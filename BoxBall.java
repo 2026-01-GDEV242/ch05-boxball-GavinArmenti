@@ -52,6 +52,8 @@ public class BoxBall
         yPosition = yPos;
         color = ballColor;
         diameter = ballDiameter;
+        
+        myBox = box;
 
         canvas = drawingCanvas;
     }
@@ -79,13 +81,39 @@ public class BoxBall
     public void move()
     {
         // remove from canvas at the current position
+        canvas.wait(50);
         erase();
             
         // compute new position
+        xPosition = xPosition + xSpeed;
+        yPosition = yPosition + ySpeed;
   
         // figure out if it has hit the left or right wall
+        if (xPosition < myBox.getLeftWall())
+        {
+            xSpeed = -xSpeed;
+            xPosition = myBox.getLeftWall();
+        }
+        
+        if (xPosition + diameter > myBox.getRightWall())
+        {
+            xSpeed = -xSpeed;
+            xPosition = myBox.getRightWall() - diameter;
+        }
         
         // figure out if it has hit the top or bottom wall
+        
+        if (yPosition < myBox.getTopWall())
+        {
+            ySpeed = -ySpeed;
+            yPosition = myBox.getTopWall();
+        }
+        
+        if (yPosition + diameter > myBox.getBottomWall())
+        {
+            ySpeed = -ySpeed;
+            yPosition = myBox.getTopWall() - diameter;
+        }
         
         draw();
     }    
