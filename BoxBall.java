@@ -94,10 +94,10 @@ public class BoxBall
         yPosition = yPosition + ySpeed;
   
         // figure out if it has hit the left or right wall
-        if (xPosition < myBox.getLeftWall())
+        if (xPosition <= myBox.getLeftWall())
         {
             xSpeed = -xSpeed;
-            xPosition = myBox.getLeftWall();
+            xPosition = myBox.getLeftWall()+1;
         }
         
         if (xPosition + diameter > myBox.getRightWall())

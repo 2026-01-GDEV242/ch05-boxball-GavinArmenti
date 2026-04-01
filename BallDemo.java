@@ -1,5 +1,6 @@
 import java.awt.Color;
 import java.util.Random;
+import java.util.ArrayList;
 
 /**
  * Class BallDemo - a short demonstration showing animation with the 
@@ -43,11 +44,11 @@ public class BallDemo
         
         if (numOfBalls >= 5 && numOfBalls <=50)
         {
-            java.util.ArrayList<BoxBall> boxballs = new java.util.ArrayList<BoxBall>();
+            ArrayList<BoxBall> boxballs = new ArrayList<BoxBall>();
             for (int i = 0; i < numOfBalls; i++)
             {
-                int xpos = random.nextInt(384) + 116;
-                int ypos = random.nextInt(284) + 116;
+                int xpos = random.nextInt(368) + 116;
+                int ypos = random.nextInt(268) + 116;
                 
                 int colorR = random.nextInt(256);
                 int colorG = random.nextInt(256);
