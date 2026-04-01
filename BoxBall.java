@@ -57,8 +57,11 @@ public class BoxBall
         myBox = box;
         
         java.util.Random random = new java.util.Random();
-        xSpeed = random.nextInt(11) - 5;
-        ySpeed = random.nextInt(11) - 5;
+        xSpeed = 0;
+        while (xSpeed == 0) {xSpeed = random.nextInt(15) - 7;}
+        
+        ySpeed = 0;
+        while (ySpeed == 0) {ySpeed = random.nextInt(15) - 7;}
 
         canvas = drawingCanvas;
     }
@@ -82,6 +85,7 @@ public class BoxBall
 
     /**
      * Move this ball according to its position and speed and redraw.
+     * Reverse speed and go to wall position if about to pass box wall.
      **/
     public void move()
     {
