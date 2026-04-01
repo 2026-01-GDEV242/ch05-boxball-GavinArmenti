@@ -18,8 +18,9 @@ import java.awt.geom.*;
  * @author David J. Barnes
  * @author Bruce Quig
  * @author William Crosbie
+ * @author Gavin Armenti
  *
- * @version 2025.10.06
+ * @version 2026.03.31
  */
 
 public class BoxBall

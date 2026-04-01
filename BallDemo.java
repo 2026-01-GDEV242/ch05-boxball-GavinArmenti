@@ -6,7 +6,9 @@ import java.util.Random;
  * Canvas class. 
  *
  * @author Michael Kölling and David J. Barnes
- * @version 2016.02.29
+ * @author Gavin Armenti
+ * 
+ * @version 2026.03.31
  */
 
 public class BallDemo   
@@ -44,10 +46,21 @@ public class BallDemo
             java.util.ArrayList<BoxBall> boxballs = new java.util.ArrayList<BoxBall>();
             for (int i = 0; i < numOfBalls; i++)
             {
-                int xpos = random.nextInt(400) + 100;
-                int ypos = random.nextInt(300) + 100;
+                int xpos = random.nextInt(384) + 116;
+                int ypos = random.nextInt(284) + 116;
                 
-                boxballs.add(new BoxBall(xpos, ypos, 16, Color.BLUE, this.box, myCanvas));
+                int colorR = random.nextInt(256);
+                int colorG = random.nextInt(256);
+                int colorB = random.nextInt(256);
+                
+                if (colorR > 210 && colorG > 210 && colorB > 210)
+                {
+                    colorR = 150;
+                    colorG = 150;
+                    colorB = 150;
+                }
+                
+                boxballs.add(new BoxBall(xpos, ypos, 16, new Color(colorR, colorG, colorB), this.box, myCanvas));
             }
             
             while (true)
